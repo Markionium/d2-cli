@@ -1,0 +1,7 @@
+node_modules
+extracted
+*.iml
+menu.json
+npm-debug.log
+dist
+.idea
