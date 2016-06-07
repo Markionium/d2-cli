@@ -7,10 +7,10 @@ const noop = () => {};
 function extractKeys(keyList, input) {
     return input
         .map(line => line.split('='))
-        // Only use keys that are in the provided key list
-        .filter(([key]) => keyList.includes(key))
         // Trim both the key and the value from white space on both ends
         .map(lineParts => lineParts.map(v => v.trim()))
+        // Only use keys that are in the provided key list
+        .filter(([key]) => keyList.includes(key))
         .distinct(([key]) => key)
         .map(splitLine => `${splitLine.join('=')}\n`)
 }
